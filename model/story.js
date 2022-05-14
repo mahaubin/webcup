@@ -1,16 +1,12 @@
 const mongoose = require('mongoose');
 
 const storySchema = mongoose.Schema({
-
-Titre:{ type: String, required: false },
-Description:{ type: String, required: false },
-media:[
-    {nomMedia:{ type: String, required: false },}
-],
-dateHistory:{ type: Date, required: false },
-datePublicatio: { type: Date, required: false },
-affichage : { type: Boolean, required: false },
-
+    titre:{ type: String, required: true},
+    description:{ type: String, required: true},
+    media:{nomMedia:{ type: String, required: true}},
+    dateHistory:{ type: Date, required: false},
+    datePublication: { type: Date, required:false},
+    affichage: { type: Boolean, required: true },
 });
 
 module.exports = mongoose.model('Story', storySchema);

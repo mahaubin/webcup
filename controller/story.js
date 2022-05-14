@@ -2,7 +2,7 @@ const Story = require("../model/story");
 
 exports.createStory =(req,res,next) =>{
     const story= new Story({
-   ...req.body
+        ...req.body
     })
     story.save()
     .then(() => res.status(201).json({ message: 'Objet enregistré !'}))

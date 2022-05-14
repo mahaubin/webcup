@@ -2,7 +2,9 @@ const express = require("express");
 const mongoose = require('mongoose');
 
 const userRoutes = require('./routes/user');
-const profilRoutes = require("./routes/profil")
+const profilRoutes = require("./routes/profil");
+const storyRoutes = require('./routes/story');
+
 const app = express();
 
 // recuperer les contenus de notre body
@@ -18,5 +20,6 @@ db.once('open', function() {
 
 app.use('/api/webcup', userRoutes);
 app.use('/api/webcup', profilRoutes);
+app.use('/api/webcup', storyRoutes);
 
 module.exports= app;
