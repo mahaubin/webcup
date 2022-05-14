@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 const profilSchema = mongoose.Schema({
-    userId: { type: String, required: true },
     profilPicture: { type: String, required: true },
     fatherName: { type: String, required: true },
     motherName: { type: String, required: true },
