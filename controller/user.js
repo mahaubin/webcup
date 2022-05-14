@@ -10,7 +10,7 @@ exports.signup = (req, res, next) => {
         lastName:req.body.lastName,
         pseudo:req.body.pseudo,
         dateBirth:req.dateBirth,
-        email: req.body.email,
+        mail: req.body.mail,
         password: hash
       });
       user.save()
@@ -20,7 +20,7 @@ exports.signup = (req, res, next) => {
     .catch(error => res.status(500).json({ error }));
 };
 
-exports.login = (req, res, next) => {
+exports.signin = (req, res, next) => {
     User.findOne({ pseudo: req.body.pseudo})
       .then(user => {
         if (!user) {

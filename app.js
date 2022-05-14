@@ -8,12 +8,13 @@ const app = express();
 app.use(express.json());
 
 //connection à la base de données
-mongoose.connect('mongodb://localhost:27017/test', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb://localhost:27017/webcup', {useNewUrlParser: true, useUnifiedTopology: true});
 db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
   console.log("connecté à Mongoose")
 });
 
+app.use('/api/webcup', userRoutes);
 
 module.exports= app;
