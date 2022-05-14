@@ -14,7 +14,7 @@ exports.createProfil =(req,res,next) =>{
 
 exports.getProfil =(req, res, next) => {
     Profil.find()
-    .then(things => res.status(200).json(things))
+    .then(profils => res.status(200).json(profils))
     .catch(error => res.status(400).json({ error }));
   };
 
