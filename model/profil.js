@@ -1,20 +1,20 @@
 const mongoose = require('mongoose');
 
 const profilSchema = mongoose.Schema({
-    profilPicture: { type: String, required: true },
-    fatherName: { type: String, required: true },
-    motherName: { type: String, required: true },
-    wifeName: { type: String, required: true},
+    profilPicture: { type: String, required: false },
+    fatherName: { type: String, required: false },
+    motherName: { type: String, required: false },
+    wifeName: { type: String, required: false},
     brotherSister: [
         {
-            lastName:{ type: String, required: true},
-            firstName:{ type: String, required: true},
+            lastName:{ type: String, required: false},
+            firstName:{ type: String, required: false},
         }
     ],
     children: [
         {
-            lastName:{ type: String, required: true},
-            firstName:{ type: String, required: true},
+            lastName:{ type: String, required: false},
+            firstName:{ type: String, required: false},
         }
     ],
 });
